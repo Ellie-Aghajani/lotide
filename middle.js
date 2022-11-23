@@ -1,26 +1,21 @@
-// to compare the equality of two arrays
-const eqArrays = function(array1, array2) {
-    for (let i = 0; i < array1.length; i++){
-      if (array1[i]!==array2[i]){
-          return false;
-      }
+const middle = function (array) {
+    let arrayResult = [];
+    // array that are smaller than length 2
+    if (array.length <= 2 && array.length > 0) {
+      return arrayResult;
+      // for all other cases
+    } else if (array.length % 2 === 0) {
+      // cases where the index is even, needing to return both middle values
+      return (arrayResult = [
+        // accessing even (first) value
+        array[array.length / 2 - 1],
+        // accessing odd (second) value
+        array[array.length / 2],
+      ]);
+    } else {
+      // cases where the index is odd
+      return (arrayResult = array[(array.length - 1) / 2]);
     }
-    return true;
-  }
-  
-  const middle = function(array) {
-       if(array.length > 2 ){
-          if(array.length % 2 === 1 ){
-              return [array[Math.floor(array.length / 2)]]; 
-          } else if(array.length % 2 === 0){
-              return [array[array.length / 2 - 1], array[array.length / 2]];
-          }  
-          
-      } else{
-          return [];
-      }
-  
-  }
-  
+  };
   
   module.exports = middle;
